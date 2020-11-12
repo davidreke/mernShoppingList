@@ -26,6 +26,10 @@ mongoose.connect(db)
 // use Route
 app.use('/api/items', items);
 
+// added code from youtube comments
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
+
 // Server static assets if in production
 if(process.env.NODE_ENV === 'production') {
     // set static folder
